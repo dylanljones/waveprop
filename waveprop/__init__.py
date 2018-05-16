@@ -3,8 +3,6 @@
 Created on 9 May 2018
 @author: Dylan
 
-project: Python Project 2
-version: 1.0
 """
 from .model import Cell
 from .model import KronigPenney, BandFinder, bloch_vector
