@@ -159,7 +159,7 @@ This will produce the following output:
 
 -Generated model:
 
-![<Model Plot>](waveprop/docs/model_example.png "Model")
+![<Model Plot>](waveprop/docs/model_example.png?raw=true "Model")
 
 -Corresponding transmission curve:
 
