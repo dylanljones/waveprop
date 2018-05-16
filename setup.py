@@ -25,7 +25,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Dylan Jones',
-    author_email='dylanljones94@gmail.com',
+    author_email='',
     version='1.0.0',
     install_requires=install_requirements,
     packages=['waveprop', 'waveprop.model', 'waveprop.utils', 'waveprop.plotting', 'waveprop.calculation'],
