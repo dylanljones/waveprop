@@ -163,7 +163,7 @@ This will produce the following output:
 
 -Corresponding transmission curve:
 
-<img src="transmission_example.png" width="600"
+<img src="transmission_example.png" width="600">
 
 
 To Do
