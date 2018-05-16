@@ -29,6 +29,6 @@ setup(
     version='1.0.0',
     install_requires=install_requirements,
     packages=['waveprop', 'waveprop.model', 'waveprop.utils', 'waveprop.plotting', 'waveprop.calculation'],
-    url='',
+    url='https://github.com/dylanljones/waveprop',
     license='MIT',
 )
