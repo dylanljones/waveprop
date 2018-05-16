@@ -1,5 +1,5 @@
-waveprop
-========
+waveprop 1.0.0
+==============
 
 Waveprop is a python package to calculate the transmission properties of a one-dimensional kronig-penney-system. The 
 model consists of a scattering region between two leads. The leads and scattering region are built up of unitcells. 
