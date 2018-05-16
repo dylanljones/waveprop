@@ -15,7 +15,7 @@ ______________|________________|______________
 Installation
 ------------
 
-Use pip to install the package:
+Download package and use pip to install:
 ````commandline
 pip install -e <folder path>
 ````
