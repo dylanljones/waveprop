@@ -90,7 +90,7 @@ model.set_disordered_sample(w=0.4, n=10, cell=lead_cell)
 ```
 This will generate a disordered sample, consisting of 10 unitcells with a deviation of 40% of the potential strength.
 
-####Transmission
+#### Transmission
 
 To calculate the transmission properties of the model, first the energy of the considered wave or particle has to be 
 set. After that, all values are accessable. For example:
