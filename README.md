@@ -1,4 +1,4 @@
-waveprop 1.0.0
+waveprop 0.0.1
 ==============
 
 Waveprop is a python package to calculate the transmission properties of a one-dimensional kronig-penney-system. The 
