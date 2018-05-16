@@ -159,11 +159,11 @@ This will produce the following output:
 
 -Generated model:
 
-<img src="model_example.png" width="200">
+<img src="model_example.png" width="600">
 
 -Corresponding transmission curve:
 
-![<Transmission Plot>](transmission_example.png "Transmission Curve")
+<img src="transmission_example.png" width="600"
 
 
 To Do
