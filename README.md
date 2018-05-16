@@ -159,7 +159,7 @@ This will produce the following output:
 
 -Generated model:
 
-![<Model Plot>](D:\Dropbox\Documents\Uni\Bachelorarbeit\code_dist\waveprop\doc\model_plot.png "Model")
+![<Model Plot>](waveprop/docs/model_example.png "Model")
 
 -Corresponding transmission curve:
 
