@@ -67,7 +67,7 @@ class TransferMatrix:
         ----------
         e : float
             Energy of the particle
-        cells : list of Cell or Cell
+        cells : array_like of Cell or Cell
             unitcell(s) of the scattering region
         """
         if isinstance(cells, Cell):
@@ -98,7 +98,7 @@ class TransferMatrix:
             Wavevector in free space
         e : float
             Energy of the particle
-        cells : list of Cell
+        cells : array_like of Cell
             unitcells of the scattering region
         """
         m_total = 1
@@ -125,17 +125,17 @@ class TransferMatrix:
 
         Parameters
         ----------
-        xlim : list of float
+        xlim : array_like of float
             energy range for calculating transmission curve, consisting of
             the start and end value.
-        cells : list of Cell
+        cells : array_like of Cell
             unitcells of the scattering region
         steps : int
             number of energy levels to calculate
 
         Returns
         -------
-        data : list of ndarray
+        data : array_like of ndarray
             e and t data of the transmission curve
         """
         e_values = np.linspace(*xlim, steps)
