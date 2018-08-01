@@ -20,6 +20,7 @@ setup(
     url='',
     license='MIT',
     author='Dylan Jones',
+    install_requires=install_requirements,
     author_email='',
     description=''
 )
