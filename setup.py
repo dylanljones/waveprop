@@ -20,7 +20,7 @@ setup(
     url='',
     license='MIT',
     author='Dylan Jones',
-    install_requires=install_requirements,
+    install_requires=["matplotlib", "numpy", "scipy"],
     author_email='',
     description=''
 )
