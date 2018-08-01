@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b7a9697-d85a-436b-8a5d-5e341d8e5b03" name="Default" comment="" />
+    <list default="true" id="1dad399d-287e-48df-b926-93176b850069" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/Wavepropagation.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/waveprop.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/model_example.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+      <change beforePath="$PROJECT_DIR$/test_script.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tests/model_tests/test_bands.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tests/model_tests/test_bloch_equation.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/transmission_example.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop.egg-info/PKG-INFO" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop.egg-info/SOURCES.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop.egg-info/dependency_links.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop.egg-info/requires.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop.egg-info/top_level.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/__init__.py" afterPath="$PROJECT_DIR$/waveprop/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/waveprop/calculation/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/calculation/constants.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/calculation/functions.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/calculation/transfer_matrix.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/model/__init__.py" afterPath="$PROJECT_DIR$/waveprop/model/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/waveprop/model/bands.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/model/kronig_penney.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/model/model.py" afterPath="$PROJECT_DIR$/waveprop/model/model.py" />
+      <change beforePath="$PROJECT_DIR$/waveprop/model/sample.py" afterPath="$PROJECT_DIR$/waveprop/model/sample.py" />
+      <change beforePath="$PROJECT_DIR$/waveprop/model/unitcell.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/plotting/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/plotting/plot_objects.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/plotting/plot_objects_3d.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/plotting/plot_utils.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/utils/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/utils/console.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/utils/curve.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/waveprop/utils/latex.py" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,13 +50,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_bloch_equation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/model_tests/test_bloch_equation.py">
+      <file leaf-file-name="test_plots.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_plots.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="255">
+              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding>
-                <element signature="e#71#106#0" expanded="true" />
+                <element signature="e#116#125#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/waveprop/model/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4557">
+              <caret line="317" column="21" lean-forward="false" selection-start-line="317" selection-start-column="21" selection-end-line="317" selection-end-column="21" />
+              <folding>
+                <element signature="e#1268#1286#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -26,20 +77,43 @@
       <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="52" lean-forward="false" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+            <state relative-caret-position="408">
+              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding>
-                <element signature="e#77#105#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_script.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_script.py">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="85">
+                <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,90 +124,77 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Setup Script" />
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>obj: &quot;Cell&quot;</find>
-      <find>:obj:&quot;list&quot; of :obj:&quot;float&quot;</find>
-      <find>obj:&quot;list&quot; of :obj:&quot;float&quot;</find>
-      <find>self.dpi</find>
-      <find>tuple</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>Cell</replace>
-      <replace>list of float</replace>
-      <replace>self._dpi</replace>
-      <replace>array_like</replace>
-    </replaceStrings>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/waveprop/model/bands.py" root0="SKIP_INSPECTION" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/waveprop/run.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/waveprop/plotting/utils.py" />
-        <option value="$PROJECT_DIR$/waveprop/plotting/model_plot_utils.py" />
-        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/test/test_transmisswion.py" />
+        <option value="$PROJECT_DIR$/wkb/__init__.py" />
+        <option value="$PROJECT_DIR$/wkb/wkb_approx.py" />
+        <option value="$PROJECT_DIR$/waveprop/model/unit_cell2.py" />
+        <option value="$PROJECT_DIR$/waveprop/model2/lead.py" />
+        <option value="$PROJECT_DIR$/waveprop/approximations/units.py" />
+        <option value="$PROJECT_DIR$/waveprop/model2/sample.py" />
+        <option value="$PROJECT_DIR$/test/test_transmission.py" />
+        <option value="$PROJECT_DIR$/test/poeschl_teller.py" />
+        <option value="$PROJECT_DIR$/test/poeschl_teller/basic_tests.py" />
+        <option value="$PROJECT_DIR$/test/test_potentials.py" />
+        <option value="$PROJECT_DIR$/waveprop/model2/model.py" />
+        <option value="$PROJECT_DIR$/waveprop/model2/unit_cell.py" />
+        <option value="$PROJECT_DIR$/waveprop2/approximation.py" />
+        <option value="$PROJECT_DIR$/waveprop2/model/unit_cell.py" />
+        <option value="$PROJECT_DIR$/waveprop2/transfer_matrix.py" />
+        <option value="$PROJECT_DIR$/waveprop2/model/lead.py" />
+        <option value="$PROJECT_DIR$/waveprop2/model/sample.py" />
+        <option value="$PROJECT_DIR$/waveprop2/units.py" />
+        <option value="$PROJECT_DIR$/waveprop2/model/model.py" />
+        <option value="$PROJECT_DIR$/waveprop/wkb/wkb_approx.py" />
+        <option value="$PROJECT_DIR$/waveprop/transfer_matrix.py" />
+        <option value="$PROJECT_DIR$/trans_test.py" />
+        <option value="$PROJECT_DIR$/waveprop/transfer_matrix2.py" />
+        <option value="$PROJECT_DIR$/band_tests.py" />
+        <option value="$PROJECT_DIR$/test/poeschl_teller/lead_tests.py" />
+        <option value="$PROJECT_DIR$/change comments.py" />
+        <option value="$PROJECT_DIR$/waveprop/constants.py" />
+        <option value="$PROJECT_DIR$/waveprop/units.py" />
+        <option value="$PROJECT_DIR$/data/__init__.py" />
+        <option value="$PROJECT_DIR$/waveprop/approximation.py" />
         <option value="$PROJECT_DIR$/waveprop/model/__init__.py" />
-        <option value="$PROJECT_DIR$/waveprop/calculation/__init__.py" />
-        <option value="$PROJECT_DIR$/waveprop/calculation/constants.py" />
-        <option value="$PROJECT_DIR$/waveprop/utils/path.py" />
-        <option value="$PROJECT_DIR$/waveprop/model/unitcell.py" />
-        <option value="$PROJECT_DIR$/waveprop/calculation/transfer_matrix.py" />
-        <option value="$PROJECT_DIR$/waveprop/model/kronig_penney.py" />
-        <option value="$PROJECT_DIR$/waveprop/utils/__init__.py" />
-        <option value="$PROJECT_DIR$/tests/test_model.py" />
-        <option value="$PROJECT_DIR$/waveprop/model/bands.py" />
-        <option value="$PROJECT_DIR$/tests/model_tests/test_unitcell.py" />
-        <option value="$PROJECT_DIR$/setup_old.py" />
-        <option value="$PROJECT_DIR$/tests/model_tests/test_bloch_equation.py" />
-        <option value="$PROJECT_DIR$/tests/model_tests/test_bands.py" />
-        <option value="$PROJECT_DIR$/waveprop/utils/latex.py" />
-        <option value="$PROJECT_DIR$/waveprop/calculation/functions.py" />
-        <option value="$PROJECT_DIR$/waveprop/utils/curve.py" />
-        <option value="$PROJECT_DIR$/waveprop/plotting/plot_objects_3d.py" />
-        <option value="$PROJECT_DIR$/MANIFEST.in" />
-        <option value="$PROJECT_DIR$/waveprop/model/model.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/waveprop/core/units.py" />
+        <option value="$PROJECT_DIR$/waveprop/core/constants.py" />
+        <option value="$PROJECT_DIR$/data/data.py" />
+        <option value="$PROJECT_DIR$/waveprop/core/__init__.py" />
+        <option value="$PROJECT_DIR$/data/potential_analysis.py" />
+        <option value="$PROJECT_DIR$/waveprop/core/approximation.py" />
+        <option value="$PROJECT_DIR$/waveprop/core/transfer_matrix.py" />
+        <option value="$PROJECT_DIR$/waveprop/model/unit_cell.py" />
         <option value="$PROJECT_DIR$/waveprop/model/sample.py" />
-        <option value="$PROJECT_DIR$/waveprop/plotting/__init__.py" />
-        <option value="$PROJECT_DIR$/waveprop/plotting/plot_objects.py" />
+        <option value="$PROJECT_DIR$/waveprop/model/lead.py" />
+        <option value="$PROJECT_DIR$/waveprop/model/_utils.py" />
+        <option value="$PROJECT_DIR$/plots.py" />
         <option value="$PROJECT_DIR$/waveprop/__init__.py" />
-        <option value="$PROJECT_DIR$/waveprop/plotting/plot_utils.py" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/test_script.py" />
+        <option value="$PROJECT_DIR$/waveprop/model/model.py" />
+        <option value="$PROJECT_DIR$/test_plots.py" />
+        <option value="$PROJECT_DIR$/waveprop/basic_plots.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="837" />
+    <option name="width" value="1272" />
     <option name="height" value="1047" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Spelling</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -150,40 +211,39 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="waveprop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waveprop" type="462c0819:PsiDirectoryNode" />
+              <item name="wave_propagation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wave_propagation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Dropbox/Documents/Uni/Bachelorarbeit/code_dist/waveprop/waveprop/calculation/constants.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Dev/Music/Music Managment" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2\waveprop_2" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2\waveprop\utils" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2\waveprop" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2\waveprop\plotting" />
+      <recent name="D:\Dropbox\Work\wave_propagation" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop\core" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop2" />
+      <recent name="D:\Dropbox\Work\wave_propagation\test\poeschl_teller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\code_dist\waveprop\waveprop\utils" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\code_dist\waveprop\tests\model_tests" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\code_dist\waveprop\waveprop\plotting" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2\waveprop\utils" />
-      <recent name="D:\Dropbox\Documents\Uni\Bachelorarbeit\Python Project 2\waveprop\plotting" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop2" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop2\model" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop\model2" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop" />
+      <recent name="D:\Dropbox\Work\wave_propagation\waveprop\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -198,26 +258,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_script">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test_plots">
+    <configuration name="band_tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -228,14 +270,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
+      <module name="wave_propagation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/band_tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="change comments" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -246,14 +288,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="SCRIPT_NAME" value="D:\Dropbox\Documents\Uni\Bachelorarbeit\code_dist\waveprop\test_script.py" />
+      <module name="wave_propagation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/change comments.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test_script" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="plots" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -264,191 +306,63 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_script.py" />
+      <module name="wave_propagation" />
+      <option name="SCRIPT_NAME" value="D:\Dropbox\Work\wave_propagation\test_plots.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Twisted Trial">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Twisted Trial">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python Project 2" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration name="docutils task in README.md" type="docs" factoryName="Docutils task" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="docutils_input_file" value="$PROJECT_DIR$/README.md" />
-      <option name="docutils_output_file" value="$PROJECT_DIR$/README.html" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="rst2html" />
-      <option name="docutils_open_in_browser" value="true" />
+      <module name="wave_propagation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Unittests for test_bands.BandFinderTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="test_plots" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/model_tests" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Dylan\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="waveprop" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_bands.BandFinderTests&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <module name="wave_propagation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_plots.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_bands.BandFinderTests" />
-      <item index="1" class="java.lang.String" itemvalue="Python.setup" />
-      <item index="2" class="java.lang.String" itemvalue="Python docs.docutils task in README.md" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_script" />
+      <item index="0" class="java.lang.String" itemvalue="Python.run" />
+      <item index="1" class="java.lang.String" itemvalue="Python.band_tests" />
+      <item index="2" class="java.lang.String" itemvalue="Python.plots" />
+      <item index="3" class="java.lang.String" itemvalue="Python.change comments" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test_plots" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_script" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python docs.docutils task in README.md" />
-        <item index="3" class="java.lang.String" itemvalue="Python.setup" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_bands.BandFinderTests" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test_plots" />
+        <item index="1" class="java.lang.String" itemvalue="Python.plots" />
+        <item index="2" class="java.lang.String" itemvalue="Python.run" />
+        <item index="3" class="java.lang.String" itemvalue="Python.change comments" />
+        <item index="4" class="java.lang.String" itemvalue="Python.band_tests" />
       </list>
     </recent_temporary>
   </component>
@@ -456,72 +370,42 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration>C:\Users\Dylan\AppData\Roaming\Subversion</configuration>
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6b7a9697-d85a-436b-8a5d-5e341d8e5b03" name="Default" comment="" />
-      <created>1525862829999</created>
+      <changelist id="1dad399d-287e-48df-b926-93176b850069" name="Default" comment="" />
+      <created>1530878669396</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1525862829999</updated>
+      <updated>1530878669396</updated>
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_for_test_bands_BandFinderTests - 2018.05.13 at 15h 36m 35s.xml">
-      <configuration name="Unittests for test_bands.BandFinderTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BandFinderTests - 2018.05.13 at 15h 37m 18s.xml">
-      <configuration name="Unittests for test_bands.BandFinderTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BandFinderTests - 2018.05.13 at 15h 40m 47s.xml">
-      <configuration name="Unittests for test_bands.BandFinderTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BlochTests - 2018.05.13 at 15h 10m 51s.xml">
-      <configuration name="Unittests for test_bands.BlochTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BlochTests - 2018.05.13 at 15h 12m 53s.xml">
-      <configuration name="Unittests for test_bands.BlochTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BlochTests - 2018.05.13 at 15h 14m 14s.xml">
-      <configuration name="Unittests for test_bands.BlochTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BlochTests - 2018.05.13 at 15h 30m 13s.xml">
-      <configuration name="Unittests for test_bands.BlochTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_bands_BlochTests - 2018.05.13 at 15h 32m 12s.xml">
-      <configuration name="Unittests for test_bands.BlochTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_bands_py - 2018.05.13 at 15h 39m 13s.xml">
-      <configuration name="Unittests in test_bands.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_bands_py - 2018.05.13 at 15h 39m 52s.xml">
-      <configuration name="Unittests in test_bands.py" configurationId="tests" />
-    </history-entry>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="837" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1272" height="1047" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28660825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29527992" sideWeight="0.25531915" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22612514" sideWeight="0.7446808" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19854133" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23710209" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17672887" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.txt" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -533,309 +417,277 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/waveprop/model/sample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/transfer_matrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="172" column="32" lean-forward="false" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/model/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="288" column="11" lean-forward="false" selection-start-line="288" selection-start-column="11" selection-end-line="288" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/transfer_matrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="172" column="32" lean-forward="true" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/model/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="288" column="11" lean-forward="false" selection-start-line="288" selection-start-column="11" selection-end-line="288" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/plotting/plot_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop_2/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/run.py" />
-    <entry file="file://$PROJECT_DIR$/waveprop/utils/path.py" />
     <entry file="file://$PROJECT_DIR$/waveprop/model/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="136">
+          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_transmission.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/core/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-337358863/builtins.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model/utility/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/approximations/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/wkb/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model/unit_cell2.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/approximations/approx.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model/lead.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model/unit_cell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/__init__.py">
+    <entry file="file://$PROJECT_DIR$/waveprop/model2/lead.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/core/transfer_matrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="1342">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/constants.py">
+    <entry file="file://$PROJECT_DIR$/test/test_transmission.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model2/sample.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model2/model.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model2/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/model/sample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="561">
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/utils/console.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/tests/test_model.py" />
-    <entry file="file://$PROJECT_DIR$/waveprop/model/bands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="175" column="39" lean-forward="false" selection-start-line="175" selection-start-column="39" selection-end-line="175" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/model_tests/test_unitcell.py" />
-    <entry file="file://$PROJECT_DIR$/waveprop/model/unitcell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup_old.py" />
-    <entry file="file://$PROJECT_DIR$/README.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/model_tests/test_bands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/utils/latex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/utils/curve.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8279">
-          <caret line="488" column="25" lean-forward="false" selection-start-line="488" selection-start-column="25" selection-end-line="488" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/model_tests/test_bloch_equation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
-          <folding>
-            <element signature="e#71#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README2.rst" />
-    <entry file="file://$PROJECT_DIR$/waveprop/model/kronig_penney.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/transfer_matrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="156" column="19" lean-forward="false" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/calculation/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MANIFEST.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/plotting/plot_objects_3d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="289" column="8" lean-forward="false" selection-start-line="289" selection-start-column="8" selection-end-line="289" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/plotting/plot_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model2/unit_cell.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/approximations/units.py" />
     <entry file="file://$PROJECT_DIR$/waveprop/model/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4029">
-          <caret line="242" column="13" lean-forward="true" selection-start-line="242" selection-start-column="13" selection-end-line="242" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="118" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/plotting/plot_objects.py">
+    <entry file="file://$PROJECT_DIR$/waveprop/wkb/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/waveprop/core/transfer_matrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4721">
-          <caret line="313" column="44" lean-forward="false" selection-start-line="313" selection-start-column="44" selection-end-line="313" selection-end-column="44" />
+        <state relative-caret-position="1069">
+          <caret line="136" column="36" lean-forward="true" selection-start-line="136" selection-start-column="36" selection-end-line="136" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/plotting/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waveprop.egg-info/requires.txt">
+    <entry file="file://$PROJECT_DIR$/band_tests.py" />
+    <entry file="file://$PROJECT_DIR$/change comments.py" />
+    <entry file="file://$PROJECT_DIR$/data/0.test-VT_AV.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="204">
-            <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/data/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/core/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/wkb/wkb_approx.py" />
+    <entry file="file://$PROJECT_DIR$/data/potential_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/core/approximation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model/unit_cell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="16" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model/_utils.py" />
     <entry file="file://$PROJECT_DIR$/waveprop/model/sample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+        <state relative-caret-position="1241">
+          <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/core/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/core/transfer_matrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/core/units.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#117#144#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_potentials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/poeschl_teller/basic_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/poeschl_teller/lead_tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-458">
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/basic_plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#313#331#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model/lead.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="168" column="39" lean-forward="true" selection-start-line="168" selection-start-column="39" selection-end-line="168" selection-end-column="39" />
+          <folding>
+            <element signature="e#965#983#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="52" lean-forward="false" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding>
-            <element signature="e#77#105#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_script.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="85">
+            <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waveprop/model/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4557">
+          <caret line="317" column="21" lean-forward="false" selection-start-line="317" selection-start-column="21" selection-end-line="317" selection-end-column="21" />
+          <folding>
+            <element signature="e#1268#1286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#116#125#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

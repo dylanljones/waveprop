@@ -1,523 +1,321 @@
 # -*- coding: utf-8 -*-
 """
-Created on 24 Mar 2018
+Created on 27 Jun 2018
 @author: Dylan Jones
 
+project: wave_propagation
+version: 1.0
 
-This module contains the main model of the package, consisting of leads and
-an optional sample.
+This module contains the main model and methods to load it.
+
+The model can be loaded with either lead-objects, a sample region or both.
+If leads are loaded with a sample region, the transfer matrix of the sample will be
+diagonalized with the transfer matrix of the leads.
+
+To initialize a model from raw potential data, the method "build_model_from_data" can be used.
+It analyzes the data and approximates the components.
+Both components can be initialized using cell-objects, too
+
+
+See Also
+--------
+    - Cell
+    - Lead
+    - Sample
+    - Approximation
+
+Examples
+--------
+Initialize model with consisting of only a sample region with two rectangle barriers:
+
+    sample_cells = [sample_cell_1, sample_cell_2]
+    model = Model()
+    model.load_cell(sample_cells=sample_cells, lead_cell=None)
+
+load the same sample region with leads:
+
+    model.load_cell(sample_cells=sample_cells, lead_cell=lead_cell)
+
+load_approximation units (this is used by the "build_model_from_data"-method:
+
+    model = Model()
+    model.load_approximation(sample_approx, cell_approx)
+
+    or
+
+    model = build_model_from_data(data_index=0, spin="up", approx_width=0.25)
 
 """
-from .kronig_penney import KronigPenney as Lead
-from .sample import Sample, OrderedSample, DisorderedSample
-from .unitcell import Cell
-from waveprop.plotting.plot_utils import plot_model, add_model_plot
-from numpy import linalg
+
 import numpy as np
+import matplotlib.pyplot as plt
+from data import get_data
+from .lead import Lead
+from .sample import Sample
+from ..core import Approximation, TransferMatrix
+
+
+def build_model_from_data(data_index=0, spin="up", approx_width=0.25):
+    """ Builds the model from dataset specified in "data"-folder and -object
+
+    Notes
+    -----
+    If the Approximation-width is lower then the data-resolution, the width-value will
+    be raised to the lowest-resolution
+
+    Parameters
+    ----------
+    data_index: int, optional
+        index of dataset
+    spin: str, optional
+        spin-value of dataset
+    approx_width: float, optional
+        width of the approsimation-units
+
+    Returns
+    -------
+    model: Model
+    """
+    # load and analyze data (see get_data-method)
+    sample_data, lead_cell_data = get_data(data_index, spin)
+
+    # check data-resolution
+    sample_step = sample_data[0][1] - sample_data[0][0]
+    cell_step = lead_cell_data[0][1] - lead_cell_data[0][0]
+
+    # if the approsimation-width is set lower then the resolution
+    # raise the approx.-width to the resolution
+    max_approx_width = max(sample_step, cell_step, approx_width)
+    if max_approx_width != approx_width:
+        print("Changed approximation-width to {:.4f} (sample rate)".format(max_approx_width))
+    else:
+        print("Using approximation-width of {:.4f}".format(max_approx_width))
+
+    # Approximate the lead- and sample-data
+    sample_approx = Approximation(*sample_data)
+    sample_approx.rectangles(max_approx_width)
+    cell_approx = Approximation(*lead_cell_data)
+    cell_approx.rectangles(max_approx_width)
+
+    # initialize the model
+    model = Model()
+    model.load_approximation(sample_approx, cell_approx)
+    return model
 
 
 class Model:
-    """ Main model of package
-    _______________________________________
-                |               |
-        Lead    |    Sample     |   Lead
-    ____________|_______________|__________
 
-    main model consisting of to semi-infinite leads modelled with the
-    kronig-penney-model and an optional sample between the two.
-    """
-
-    def __init__(self, lead_cell=None, n_bands=3):
-        """ Create the model
-
-        Parameters
-        ----------
-        lead_cell : Cell, optional
-            unitcell used in leads
-        n_bands : int, optional
-            number of bands to calculate
-        """
-        self._e = 0
-        self._lead = None
+    def __init__(self):
+        """ Initialize the model-instance and declare variables for the lead- and sample-component"""
         self._sample = None
+        self._lead = None
 
-        self.set_lead(lead_cell, n_bands)
-
-    @classmethod
-    def from_lead_params(cls, v, a, d):
-        """Create model from cell-parameters
+    def load_approximation(self, sample_approx=None, lead_cell_approx=None):
+        """ Load Approsimation-objects as lead and/or sample
 
         Parameters
         ----------
-        v : float
-            Potential strength
-        a : float
-            Cell size
-        d : float
-            Barrier size
-
-        Returns
-        -------
-        model : Model
+        sample_approx: Approximation, optional
+            Approsimation-instance of the sample-data
+        lead_cell_approx: Approximation, optional
+            Approximation-instance of the lead-cell-data
         """
-        cell = Cell(v, a, d)
-        return cls(lead_cell=cell)
-
-    """ ================================= Configuration ======================================== """
-
-    def set_lead(self, lead_cell, n_bands):
-        """Set leads of the model
-
-        Parameters
-        ----------
-        lead_cell : Cell
-            unitcell used in leads
-        n_bands : int
-            number of bands to calculate
-        """
-        self._lead = Lead(lead_cell, n_bands)
-
-    def set_sample(self, cells=None):
-        """Set the sample of the model
-
-        Parameters
-        ----------
-        cells : list of Cell, optional
-            unitcells of the scattering region
-        """
-        if cells is None:
-            self._sample = None
-        else:
-            self._sample = Sample(cells)
-
-    def set_ordered_sample(self, n, cell=None, n_bands=3):
-        """Set an ordered Sample region
-
-        Parameters
-        ----------
-        n : int
-            number of unitcells in scattering region
-        cell : Cell
-            unitcell used in sample
-        n_bands : int
-            number of bands to calculate
-        """
-        if isinstance(self._sample, OrderedSample):
-            self._sample.new_sample(n, cell)
-            self._sample.set_energy(self.e)
-        elif cell is not None:
-            sample = OrderedSample(cell, n, n_bands)
+        # if sample_approx is given, load sample
+        if sample_approx:
+            sample = Sample()
+            sample.load_units(sample_approx.units)
             self._sample = sample
-            self._sample.set_energy(self.e)
-        else:
-            self._sample = None
 
-    def set_disordered_sample(self, w, n, cell=None):
-        """Set a disordered Sample region
+        # if lead_cell_approx is given, load lead
+        if lead_cell_approx:
+            lead = Lead()
+            lead.load_units(lead_cell_approx.units)
+            self._lead = lead
+
+    def load_cell(self, sample_cells=None, lead_cell=None):
+        """ Load cell-objects as lead and/or sample
 
         Parameters
         ----------
-        w : float
-            Disorder strength of sample
-        n : int
-            number of unitcells in scattering region
-        cell : Cell
-            unitcell used for calculating random cells in sample region
+        sample_cells: array_like of Cell or Cell, optional
+            list of cells of the sample region.
+            will be converted to list if single item
+        lead_cell: Cell, optional
+            cell of the lead
         """
-        if isinstance(self._sample, DisorderedSample):
-            self._sample.new_sample(w, n, cell)
-            self._sample.set_energy(self.e)
-        else:
-            if cell is None:
-                cell = self.lead_cell
-            sample = DisorderedSample(cell, w, n)
+        # if sample_cells is/are given, load sample
+        if sample_cells:
+            # convert input to list, if single cell-instance
+            sample_cells = [sample_cells] if len(list(sample_cells)) == 1 else sample_cells
+            sample = Sample()
+            sample.load_cells(sample_cells)
             self._sample = sample
-            self._sample.set_energy(self.e)
 
-    def is_ordered(self):
-        """Check if sample is an ordered sample
+        # if lead_cell is given, load lead
+        if lead_cell:
+            lead = Lead()
+            lead.load_cell(lead_cell)
+            self._lead = lead
 
-        Returns
-        -------
-        is_ordered : bool
-        """
-        return True if isinstance(self.sample, OrderedSample) else False
-
-    def is_disordered(self):
-        """Check if sample is a disordered sample
-
-        Returns
-        -------
-        is_disordered : bool
-        """
-        return True if isinstance(self.sample, DisorderedSample) else False
+    # def load_lead(self, cell):
+    #     lead = Lead()
+    #     lead.load_cell(lead_cell)
+    #     self._lead = lead
+    #
+    # def load_sample_cells(self, cells):
+    #     sample = Sample()
+    #     sample.load_cells(cells)
+    #     self._sample = sample
 
     def set_energy(self, e):
-        """Set energy of particle moving through Model
-
-        Sets the energy of leads (kronig-penney-model) and the sample region
+        """ Set the of the model and all sub-components, if loaded
 
         Parameters
         ----------
         e : float
-            Energy of particle
+            energy of the considered particle moving through the model
         """
-        self.e = e
-        self._lead.set_energy(self.e)
-        if self._sample is not None:
-            self._sample.set_energy(self.e)
+        # if lead-instance is loaded, set its energy
+        if self._lead:
+            self._lead.set_energy(e)
 
-    """ ==================================== Properties ======================================== """
-
-    @property
-    def e(self):
-        """float: Currently set energy"""
-        return self._e
-
-    @e.setter
-    def e(self, e):
-        if e == np.nan:
-            e = 0
-        self._e = abs(e)
+        # if sample-instance is loaded, set its energy
+        if self._sample:
+            self._sample.set_energy(e)
 
     @property
     def lead(self):
-        """KronigPenney: Lead object used in model"""
+        """ Lead: lead-component of the model"""
         return self._lead
 
     @property
     def sample(self):
-        """Sample: Sample object used in model"""
+        """ Sample: sample-component of the model"""
         return self._sample
 
     @property
-    def lead_cell(self):
-        """Cell: unitcell used in leads"""
-        return self._lead.cell
+    def transfer_matrix(self):
+        """ Get Transfermatrix of full model
 
-    @property
-    def sample_cell(self):
-        """Cell: unitcell used in sample, if ordered"""
-        if isinstance(self.sample, OrderedSample):
-            return self._sample.cell
-
-    @property
-    def bands(self):
-        """list of list: energy bands of the leads"""
-        return self.lead.bands
-
-    @property
-    def gaps(self):
-        """list of list: energy gaps of the leads"""
-        return self._lead.gaps
-
-    @property
-    def sample_bands(self):
-        """list of list: energy bands of the sample, if ordered"""
-        if isinstance(self.sample, OrderedSample):
-            return self.sample.bands
-        else:
-            return None
-
-    @property
-    def sample_gaps(self):
-        """list of list: energy gaps of the sample, if ordered"""
-        if isinstance(self.sample, OrderedSample):
-            return self.sample.gaps
-        else:
-            return None
-
-    @property
-    def sample_length(self):
-        """float: total length of the sample"""
-        if self._sample is None:
-            return 0
-        else:
-            return self._sample.length
-
-    @property
-    def k(self):
-        """float: blochvector of model"""
-        return self._lead.k
-
-    @property
-    def sample_k(self):
-        """float: blochvector of sample, if ordered"""
-        if isinstance(self.sample, OrderedSample):
-            k = 0
-            if np.imag(self.k) == 0:
-                k = self.sample.k
-            return k
-        else:
-            return None
-
-    @property
-    def t(self):
-        """float: Transmission koefficient of model"""
-        return self.transmission()
-
-    @property
-    def M(self):
-        """ndarray: Transfermatrix of model"""
-        return self._transfer_matrix()
-
-    """ =================================== Main Methods ======================================= """
-
-    def transmission(self, e=None):
-        """Calculate the transmission koefficient for a given energy e
-
-        Parameters
-        ----------
-        e : float
-            energy of particle
+        If lead-component is loaded, the transfer matrix must bediagonalized in the base of the
+        lead-transfer -matrix
 
         Returns
         -------
-        t : float
-            transmission koefficient
+        tm: TransferMatrix
         """
-        if e is None:
-            e = self.e
-        self.set_energy(e)
-        if np.imag(self.k) != 0:
-            return 0
-        m = self._transfer_matrix()
-        m22 = m[1, 1]
-        if m22 == 0:
-            return np.nan
-        else:
-            return 1 / (np.abs(m22) ** 2)
+        lead_tm = self._lead.transfer_matrix if self._lead else TransferMatrix.one_matrix()
+        sample_tm = self._sample.transfer_matrix if self._sample else TransferMatrix.one_matrix()
 
-    def transmission_curve(self, xlim=None, n=2000):
-        """Calculate transmission values for energies in a given range
+        # diagonalize transfer matrix
+        if self._lead:
+            # handle bad values
+            if lead_tm.t == 0:
+                return TransferMatrix.null_matrix()
+
+            # if no sample is loaded, set sample-transfer-matrix to the unitary matrix
+            tm_sample = self._sample.transfer_matrix if self._sample else TransferMatrix.one_matrix()
+            tm_sample.diagonalize(lead_tm)
+        return sample_tm
+
+    def transmission_curve(self, elim, steps=1000):
+        """ Calculate the transmission data (e- and t-values) for the model
 
         Parameters
         ----------
-        xlim :list of float
-            energy range for calculating transmission curve, consisting of
-            the start and end value.
-        n : int
-            number of energy levels to calculate
+        elim: tuple of float
+            energy-range to calculate transmission value
+        steps: int, optional
+            number of energy-steps, default: 1000
 
         Returns
         -------
-        data : list of ndarray
-            e and t data of the transmission curve
+        transmission_data: tuple of array_like
         """
-        if xlim is None:
-            xlim = [0, 30]
-        e_values = np.linspace(*xlim, n)
-        t_values = []
+        e_values = np.linspace(*elim, steps)
+        t_values = list()
         for e in e_values:
-            t_values.append(self.transmission(e))
+            self.set_energy(e)
+            t_values.append(self.transfer_matrix.t)
         return e_values, t_values
 
-    def get_band(self, i, offset=None):
-        """Get the start and end of the i-th energy band
+    def potential(self, n_lead_cells=2):
+        """ Build the potential data of all components loaded in the model
 
         Parameters
         ----------
-        i : int
-            index of band
-        offset : float
-            scaling factor for different representations
+        n_lead_cells: int, optional
+            number of cells to plot in each lead, default: 2
 
         Returns
         -------
-        band_energies :obj:"list" of float
+        potential-data: tuple of array_like
         """
-        e0, e1 = self.bands[i - 1]
-        if offset:
-            delta = self.get_band_size(i) * offset
-            e_range = [e0 - delta, e1 + delta]
+        sample = self._sample.potential()
+        x0, x1 = self._sample.xlim
+        if self.lead:
+            lead_in = self._lead.potential(x0, n_lead_cells, -1)
+            lead_out = self._lead.potential(x1, n_lead_cells, 1)
         else:
-            e_range = [e0, e1]
-        return e_range
+            sample_w = abs(x1-x0)
+            offset = 0.5 * sample_w
+            lead_in = [x0-offset, x0], [0, 0]
+            lead_out = [x1, x1+offset], [0, 0]
+        x, y = list(), list()
+        for _data in [lead_in, sample, lead_out]:
+            x = x + list(_data[0])
+            y = y + list(_data[1])
+        return x, y
 
-    def get_band_size(self, i):
-        """Get the size of the i-th energy band
+    @property
+    def potential_lim(self):
+        """ tuple of float: Returns the min and max value of the potential of the model"""
+        v = self.potential(1)[1]
+        return min(v), max(v)
 
-        Parameters
-        ----------
-        i : int
-            index of band
-
-        Returns
-        -------
-        size : float
-        """
-        band = self.get_band(i)
-        return abs(band[1]-band[0])
-
-    def in_sample_band(self, e):
-        """Check if given energy e is in energy band of sample
+    def get_cell_edges(self, n_lead_cells):
+        """ calculates the edges of the cells of each lead
 
         Parameters
         ----------
-        e : float
-            energy level
+        n_lead_cells: int
+            number of cells to plot in each lead
 
         Returns
         -------
-        in_band : bool
+        x_edges: array_like
+            x-values of the cell-edges
         """
-        if self.sample.type() != OrderedSample:
-            return False
-        for band in self.sample_bands:
-            in_band = (band[0] <= e) and (e <= band[1])
-            if in_band:
-                return True
-        return False
+        x0, x1 = self._sample.xlim
+        a = self._lead.cell.a
+        x = list()
+        for i in range(n_lead_cells+1):
+            x.append(x0 - i*a)
+            x.append(x1 + i*a)
+        x.sort()
+        return x
 
-    def in_lead_band(self, e):
-        """Check if given energy e is in energy band of leads
+    def plot(self, n_lead_cells=5, col="black"):
+        """ Plots the potential of the model
 
         Parameters
         ----------
-        e : float
-            energy level
+        n_lead_cells : int, optional
+            number of cells to plot in each lead, default: 5
+        col: matplotlib.color, optional
+            color for plotting, default: black
 
         Returns
         -------
-        in_band : bool
+        fig: matplotlib.figure
+            figure-instance of plot
+        ax: matplotlib.axis
+            axis-object of plot
         """
-        for band in self.bands:
-            if self.in_band(e, band):
-                return True
-        return False
-
-    @staticmethod
-    def in_band(e, band):
-        """Check if given energy e is in given band
-
-        Parameters
-        ----------
-        e : float
-            energy level
-        band : array_like of float
-            band to check
-
-        Returns
-        -------
-        in_band : bool
-        """
-        if (band[0] <= e) and (e <= band[1]):
-            return True
-        else:
-            return False
-
-    def total_bands(self):
-        """Calculate total band structure
-
-        If sample is an ordered sample, the band structure is an overlap of the bands
-        of the leads and the bands of the sample region
-
-        Returns
-        -------
-        total_bands : list of list
-        """
-        if not self.is_ordered():
-            return self.bands
-        total_bands = []
-        for band in self.bands:
-            for sample_band in self.sample_bands:
-                e0, e1 = sample_band
-                lower_in = self.in_band(e0, band)
-                upper_in = self.in_band(e1, band)
-                both_in = lower_in and upper_in
-                if both_in:
-                    new_band = [e0, e1]
-                    total_bands.append(new_band)
-                elif lower_in and not upper_in:
-                    new_band = [e0, band[1]]
-                    total_bands.append(new_band)
-                elif not lower_in and upper_in:
-                    new_band = [band[0], e1]
-                    total_bands.append(new_band)
-        return total_bands
-
-    """ ====================================== Other =========================================== """
-
-    def _transfer_matrix(self):
-        """Calculate the total transfermatrix of the system
-
-        First the eigenbasis q of the transfermatrix of the leads is calculated.
-        To get the total matrix, the transfermatrix of the sample is represented in
-        the base of the lead-transfermatrix
-
-        Returns
-        -------
-        M : ndarray
-            transfermatrix of the whole system
-        """
-        q = linalg.eig(self.lead.M)[1]
-        if self._sample is None:
-            m_s = 1
-        else:
-            m_s = self._sample.M
-        return np.dot(linalg.inv(q), np.dot(m_s, q))
-
-    def build(self, cell_resolution, n_cells=None):
-        """Build potential data for plotting the model
-
-        Parameters
-        ----------
-        cell_resolution : int
-            Number of points in each cell
-        n_cells : int
-            Number of lead-cells in build
-
-        Returns
-        -------
-        potential_data : list of list
-            potential data of the two leads and the sample
-        """
-        n_sample = 2
-        if self.sample is not None:
-            n_sample = self.sample.n
-        if n_cells is None:
-            n_cells = max(2, int(n_sample / 25))
-        lead = self.lead
-        a = lead.cell.a
-
-        x0 = - n_cells * a
-        lead1 = self.lead.build(x0, n_cells, cell_resolution)
-
-        if self.sample is not None:
-            sample = self.sample.build(cell_resolution=cell_resolution)
-        else:
-            sample = [np.asarray([]), np.asarray([])]
-        x0 = self.sample_length
-        lead2 = self.lead.build(x0, n_cells, cell_resolution)
-        return lead1, lead2, sample
-
-    def show(self, font=None, cell_resolution=None, n_cells=None):
-        """ Creates plot of current model
-
-        Parameters
-        ----------
-        font: dict
-            font for plot
-        cell_resolution : int
-            Number of points in each cell
-        n_cells : int
-            Number of lead-cells in build
-
-        Returns
-        -------
-        plot : matplotlib figure
-        """
-        plt = plot_model(self, font, cell_resolution, n_cells)
-        return plt
-
-    def add_plot(self, plt, cell_res, n_cells=None, label=None, sample_color=None):
-        _, ylim = add_model_plot(plt.ax, self, cell_res, n_cells, label, sample_color)
-        return ylim
-
-    def __str__(self):
-        out = "\nLEAD:\n"
-        out += str(self.lead)
-        out += "SAMPLE: "
-        out += str(self.sample) + "\n"
-        out += "________________________"
-        return out
+        fig, ax = plt.subplots()
+        x, y = self.potential(n_lead_cells)
+        ax.plot(x, y, color=col, lw=1.5)
+        if self.lead:
+            for x in self.get_cell_edges(n_lead_cells):
+                ax.axvline(x, lw=0.5, color="0.5")
+        return fig, ax

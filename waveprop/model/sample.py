@@ -1,306 +1,152 @@
 # -*- coding: utf-8 -*-
 """
-Created on 24 Mar 2018
+Created on 27 Jun 2018
 @author: Dylan Jones
 
-This module contains scattering sample objects:
-    -Sample:            general Sample consisting of different unitcells
-    -OrderedSample:     sample of n identical unicells
-    -DisorderedSample:  randomly distributet sample
+This module contains the Sample-object for representing the sample region of the model
 
+The Sample-object can be loaded using two different methods:
+    - sample.load_units:
+        loads multiple approximation-units as representation of the samplepotential
+    - sample.load_cells:
+        loads the approximation units of one or more cell-objects. This can be used for
+        fast prototyping of potetnials
+
+See Also
+--------
+    - Cell
+
+Examples
+--------
+Create a new sample from a unit-cell:
+
+    cell = Cell.rectangle_barrier(v=10, a=1.0, d=0.8)
+    sample = Sample()
+    sample.load_cells([cell])
+
+Calculate the value of the transmission amplitude for a given energy e:
+
+    e = 10
+    sample.set_energy(e)
+    tm = sample.transfer_matrix
+    t = tm.t
 """
+
+import copy
 import numpy as np
-import random
-from ..calculation import constants, TransferMatrix
-from .unitcell import Cell
-from .kronig_penney import BandFinder, get_gaps, bloch_vector
+from ..core.transfer_matrix import TransferMatrix
 
 
 class Sample:
-    """ General sample object
 
-    general sample object consisting of multiple unitcells. other sample objects
-    inherent from this
-    """
-
-    def __init__(self, cells):
-        """Create sample object
+    def __init__(self, approximation_units=None):
+        """ Initialize the Sample-instance
 
         Parameters
         ----------
-        cells : list of Cell
-            list of unitcells in sample
+        approximation_units: array_like of ApproximationUnit, optional
+            if not None, load units into model
+
         """
-        self._cells = list(cells)
-        self._transferMatrix = TransferMatrix()
+        self._units = None
+        self._width = None
         self._e = 0
+        self._transfer_matrix = TransferMatrix()
+
+        if approximation_units:
+            self.load_units(approximation_units)
+
+    def load_units(self, approximation_units):
+        """ Load units into the sample and store them
+
+        Parameters
+        ----------
+        approximation_units: array_like of ApproximationUnit
+            units to use in sample region
+        """
+        self._units = approximation_units
+        self._width = sum([unit.width for unit in self._units])
+
+    def load_cells(self, cells):
+        """ Load cell-objects into the sample region.
+
+        This saves all units used in the cells in the sample-instance
+
+        Parameters
+        ----------
+        cells: array_like of Cell
+            cells used in sample-region
+        """
+        units = list()
+        x0_cell = 0
+        for cell in cells:
+            cell_units = list(cell.units)
+            for unit in cell_units:
+                unit_copy = copy.copy(unit)
+                unit_copy.x0 += x0_cell
+                units.append(unit_copy)
+            x0_cell += cell.a
+
+        self.load_units(units)
 
     def set_energy(self, e):
-        """Set energy of particle moving through Model
+        """ Sets the energy of the sample-model and calculate all values
 
         Parameters
         ----------
         e : float
-            Energy of particle
+            energy of the considered particle moving through the lead
         """
-        q = np.sqrt(2 * constants.m * e) / constants.hbar
-        self._transferMatrix.multiple(q, e, self._cells)
         self._e = e
+        self._transfer_matrix.multiple_rectangles(e, self.units)
 
     @property
-    def M(self):
-        """ndarray: Transfermatrix of the model"""
-        return self._transferMatrix.M
+    def xlim(self):
+        """ tuple of float: x-range of the sample-potential"""
+        x0 = self.units[0].x0
+        return x0, x0 + self._width
 
     @property
-    def t(self):
-        """float: Transmission koefficient of model"""
-        return self._transferMatrix.t
+    def units(self):
+        """ array_like of ApproximationUnit: units of the approximated sample"""
+        return self._units
 
     @property
-    def cells(self):
-        """list of Cell: list of cells in sample region"""
-        return self._cells
+    def transfer_matrix(self):
+        """ TransferMatrix: The trasfermatrix-instance for the sample"""
+        return self._transfer_matrix
 
-    @cells.setter
-    def cells(self, cells):
-        self._cells = cells
-
-    @property
-    def n(self):
-        """int: number of unitcells in sample"""
-        return len(self._cells)
-
-    @property
-    def length(self):
-        """float: total length of sample"""
-        length = 0
-        for cell in self._cells:
-            length += cell.a
-        return length
-
-    def build(self, x0=0, cell_resolution=None):
-        """Build potential data for plotting the sample
+    def transmission_curve(self, elim, steps=1000):
+        """ Calculate the transmission data (e- and t-values) for the sample
 
         Parameters
         ----------
-        x0 : float
-            Starting location of build
-        cell_resolution : int
-            Number of points in each cell
+        elim: tuple of float
+            energy-range to calculate transmission value
+        steps: int, optional
+            number of energy-steps, default: 1000
 
         Returns
         -------
-            potential_data : list of ndarray
+        transmission_data: tuple of array_like
         """
-        x_values, v_values = np.asarray([]), np.asarray([])
-        for cell in self.cells:
-            x, v = cell.build(x0, cell_resolution)
-            x_values = np.append(x_values, x)
-            v_values = np.append(v_values, v)
-            x0 += cell.a
-        return x_values, v_values
+        e_values = np.linspace(*elim, steps)
+        t_values = list()
+        for e in e_values:
+            self.set_energy(e)
+            t_values.append(self.transfer_matrix.t)
+        return e_values, t_values
 
-    def type(self):
-        """type: get type of sample"""
-        return type(self)
-
-    def _to_string(self):
-        """str: get info string of cell"""
-        out = "N = {:d}, Length = {:.1f}".format(self.n, self.length)
-        return out
-
-    def __str__(self):
-        out = "Sample: \n"
-        return out
-
-
-class OrderedSample(Sample):
-    """ Ordered sample object
-
-    sample consisting of n identical unitcells. Has band structure and bloch vector
-    """
-
-    def __init__(self, cell, n, n_bands=2):
-        """Create ordered Sample
-
-        Parameters
-        ----------
-        cell : Cell
-            unitcell of sample
-        n : int
-            number of identical unitcells in sample
-        n_bands : int
-            number of sample-bands to calculate
-        """
-        self._cell_prototype = cell
-        cells = [cell] * n
-        super(OrderedSample, self).__init__(cells)
-        self._bands = self.get_bands(n_bands)
-
-    def new_sample(self, n, cell=None):
-        """Generate new sample
-
-        Parameters
-        ----------
-        n : int
-            number of identical unitcells in sample
-        cell : Cell
-            unitcell of sample
-        """
-        if cell is None:
-            cell = self._cell_prototype
-        self.cells = [cell] * n
-
-    @property
-    def cell(self):
-        """Cell: unitcell used in sample"""
-        return self._cells[0]
-
-    @property
-    def bands(self):
-        """list of float : Energy bands of sample"""
-        return list(self._bands)
-
-    @property
-    def gaps(self):
-        """list of float : Energy gaps of sample"""
-        return get_gaps(self.bands)
-
-    @property
-    def k(self):
-        """float: Bloch vector of sample"""
-        return bloch_vector(self._e, self._cell_prototype)
-
-    def get_bands(self, n=3):
-        """ Calculate the first n energy bands of the model using the BandFinder object
-
-        Parameters
-        ----------
-        n : int
-            Number of bands
+    def potential(self):
+        """ Build the potential data of the sample region
 
         Returns
         -------
-        bands : list of list
-            Energy bands of sample
+        potential_data: tuple of array_like
         """
-        bf = BandFinder(self._cell_prototype, n)
-        return bf.bands
-
-    def get_band_size(self, i):
-        """Calculate size of i-th energy band of sample
-
-        Parameters
-        ----------
-        i : int
-            number of band
-
-        Returns
-        -------
-        size : float
-        """
-        band = list(self.bands[i-1])
-        return abs(band[1]-band[0])
-
-    def get_gap(self, i):
-        """list of float: i-th energy gap """
-        return self.gaps[i]
-
-    def get_gap_size(self, i):
-        """Calculate size of i-th energy gap of sample
-
-        Parameters
-        ----------
-        i : int
-            number of gap
-
-        Returns
-        -------
-        size : float
-        """
-        gap = self.gaps[i]
-        return abs(gap[1]-gap[0])
-
-    def __str__(self):
-        out = "Ordered Sample: V = {}, ".format(self.cell.v)
-        return out + self._to_string()
-
-
-class DisorderedSample(Sample):
-    """ Disordered sample object
-
-    sample consisting of n random unitcells. The potential strength has a rectangular distribution
-    with width w. This describes the disorder of the ssample.
-    """
-
-    def __init__(self, cell, w, n):
-        """Crerate Disordered Sample
-
-        Parameters
-        ----------
-        cell : Cell
-            unitcell to base probability distribiution
-        w : float
-            strngth of disorder
-        n : int
-            number of unitcells in sample
-        """
-        self._cell_prototype = cell
-        self._w = w
-        cells = self._get_cells(self._w, n, cell)
-        super(DisorderedSample, self).__init__(cells)
-
-    @property
-    def w(self):
-        """float: strength of disorder in fraction of v of leads"""
-        return self._w
-
-    def new_sample(self, w, n, cell=None):
-        """Generate new sample
-
-        Parameters
-        ----------
-        w : float
-            strngth of disorder
-        n : int
-            number of unitcells in sample
-        cell : Cell
-            unitcell to base probability distribiution
-        """
-        self._w = w
-        if cell is None:
-            cell = self._cell_prototype
-        cells = self._get_cells(self._w, n, cell)
-        self.cells = cells
-
-    @staticmethod
-    def _get_cells(w, n, cell):
-        """Generate n unitcells with random barrier strengths v_i around v
-
-        Parameters
-        ----------
-        w : float
-            strngth of disorder
-        n : int
-            number of unitcells in sample
-        cell : Cell
-            unitcell to base probability distribiution
-
-        Returns
-        -------
-        cells : list of Cell
-            list of generated unitcell-objects
-        """
-        v0, a, d = cell.params
-        delta = v0 * w
-        cells = []
-        for i in range(n):
-            v = random.uniform(v0 - delta, v0 + delta)
-            cell = Cell(v, a, d)
-            cells.append(cell)
-        return cells
-
-    def __str__(self):
-        out = "Disordered Sample: W = {}, ".format(self.w)
-        return out + self._to_string()
+        x_data, y_data = list(), list()
+        for unit in self._units:
+            x, y = unit.build(100)
+            x_data = x_data + list(x)
+            y_data = y_data + list(y)
+        return x_data, y_data

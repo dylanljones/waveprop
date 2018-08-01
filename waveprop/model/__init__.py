@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on 24 Mar 2018
+Created on 15 Jul 2018
 @author: Dylan Jones
+
+project: wave_propagation
+version: 1.0
 """
 
-from .unitcell import Cell
-from .kronig_penney import KronigPenney
-from .bands import BandFinder, bloch_vector
-from .sample import OrderedSample, DisorderedSample, Sample
-from .model import Model
-
+from .unit_cell import Cell
+from .lead import Lead
+from .sample import Sample
+from .model import Model, build_model_from_data

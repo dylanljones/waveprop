@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on 9 May 2018
-@author: Dylan
+Created on 15 Jul 2018
+@author: Dylan Jones
 
+project: wave_propagation
+version: 1.0
 """
-from .model import Cell
-from .model import KronigPenney, BandFinder, bloch_vector
-from .model import Sample, OrderedSample, DisorderedSample
-from .model import Model
 
-from .calculation import constants, TransferMatrix
+from .core import constants
+from .core import Approximation, ApproximationUnit, Rectangle
+from .core import TransferMatrix
 
-from .plotting import Plot, ErrorPlot, Plot3D
-from .plotting import color_gaps
-
-from .utils import console, Curve
+from .model import Cell, Sample, Lead, Model
+from .model import build_model_from_data

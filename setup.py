@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on 13 May 2018
-@author: Dylan Jones
-
-"""
 from setuptools import setup
 from codecs import open as codec_open
 from os import path
@@ -20,15 +14,12 @@ with open(path.join(here, 'requirements.txt'), "r") as f:
 install_requirements = [line[:-1] for line in lines]
 
 setup(
-    name='waveprop',
-    description='Package for calculating transmission properties of molecular kronig-penney-systems in one dimension',
-    long_description=long_description,
-    long_description_content_type='text/markdown',
+    name='wave_propagation',
+    version='1.0.0',
+    packages=['data', 'waveprop', 'waveprop.core', 'waveprop.model'],
+    url='',
+    license='MIT',
     author='Dylan Jones',
     author_email='',
-    version='1.0.0',
-    install_requires=install_requirements,
-    packages=['waveprop', 'waveprop.model', 'waveprop.utils', 'waveprop.plotting', 'waveprop.calculation'],
-    url='https://github.com/dylanljones/waveprop',
-    license='MIT',
+    description=''
 )
