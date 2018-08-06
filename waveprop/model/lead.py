@@ -105,7 +105,7 @@ class Lead:
     @property
     def transfer_matrix(self):
         """ TransferMatrix: Calculate and return the transfer-matrix of the cell used in the lead """
-        if np.imag(self.bloch_vector) != 0:
+        if not np.allclose(np.imag(self.bloch_vector), 0):
             self._transfer_matrix.null()
         return self._transfer_matrix
 
@@ -205,10 +205,18 @@ class Lead:
         # mirror band-structure
         k_values = np.append(-k_values[::-1], k_values)
         e_values = np.append(e_values[::-1], e_values)
-
+        k_real = list()
+        k_imag = list()
+        for k in k_values:
+            if np.allclose(np.imag(k), 0):
+                k_real.append(k)
+                k_imag.append(np.nan)
+            else:
+                k_real.append(np.nan)
+                k_imag.append(np.imag(k))
         # split values into real- and imaginary-curves
-        k_real = np.where(np.imag(k_values) == 0, k_values, np.nan)
-        k_imag = np.where(np.imag(k_values) != 0, np.imag(k_values), np.nan)
+        #k_real = np.where(np.imag(k_values) == 0, k_values, np.nan)
+        #k_imag = np.where(np.imag(k_values) != 0, np.imag(k_values), np.nan)
 
         return e_values, k_real, k_imag
 

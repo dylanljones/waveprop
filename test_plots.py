@@ -13,7 +13,7 @@ from waveprop import build_model_from_data
 from waveprop.basic_plots import potential_plot, transmission_plot, transcendental_plot, band_plot
 
 spins = ["up", "down"]
-fig_path = r"D:\Dropbox\Work\figures"
+#fig_path = r"D:\Dropbox\Work\figures"
 
 save = False
 energy_lim = [-30, 30]
@@ -27,9 +27,9 @@ def main():
         print(f"Loading data-set: {idx:}")
         print("----------------------")
         print("Up: ", end="")
-        model_up = build_model_from_data(idx, "up")
+        model_up = build_model_from_data(idx, "up", approx_width=0.1)
         print("Down: ", end="")
-        model_down = build_model_from_data(idx, "down")
+        model_down = build_model_from_data(idx, "down", approx_width=0.1)
         models = [model_up, model_down]
         #  e_min = min([min(model.lead.cell.data) for model in models])
         print()

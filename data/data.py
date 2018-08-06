@@ -32,7 +32,7 @@ import numpy as np
 from .potential_analysis import PotentialAnalyzer
 
 #  name of the file containing the potential data
-FILE_NAME = r".\0.test-VT_AV.dat"  # must be in same directory
+FILE_NAME = r"0.test-VT_AV.dat"  # must be in same directory
 
 
 class RawData:

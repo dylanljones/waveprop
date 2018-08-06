@@ -146,7 +146,7 @@ class Model:
         # if sample_cells is/are given, load sample
         if sample_cells:
             # convert input to list, if single cell-instance
-            sample_cells = [sample_cells] if len(list(sample_cells)) == 1 else sample_cells
+            sample_cells = [sample_cells] if not isinstance(sample_cells, list) else sample_cells
             sample = Sample()
             sample.load_cells(sample_cells)
             self._sample = sample
